@@ -4,7 +4,7 @@
  * @param {...string} fields - the properties paths to pick
  * @returns {object} - returns the new object
  */
- export const pick = (obj, ...fields) => {
+export const pick = (obj, ...fields) => {
   return Object.fromEntries(
     Object.entries(obj).filter(([key, value]) => {
       if (fields.includes(key)) {
