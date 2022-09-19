@@ -8,10 +8,10 @@ export function createGetter(path) {
   const fieldArray = path.split('.');
 
   return function getObjectValue (object) {
-    for (let [key, value] of Object.entries(object)) {
+    for (const [key, value] of Object.entries(object)) {
       if (key === fieldArray.at(-1)) {
         return value;
-      } else if (typeof value === 'object') {
+      } else if (value && typeof value === 'object') {
         return getObjectValue(value);
       }
     }
